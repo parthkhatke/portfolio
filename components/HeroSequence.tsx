@@ -120,6 +120,33 @@ function TextBeat({
   );
 }
 
+// ─── Scroll Down Hint ───────────────────────────────────────────────
+function ScrollHint({ scrollProgress }: { scrollProgress: ReturnType<typeof useSpring> }) {
+  const opacity = useTransform(scrollProgress, [0, 0.03], [1, 0]);
+
+  return (
+    <motion.div
+      className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[11] flex flex-col items-center gap-3 pointer-events-none"
+      style={{ opacity }}
+    >
+      <span className="text-white/30 text-[0.7rem] tracking-[0.3em] font-mono uppercase">
+        Scroll down
+      </span>
+      <motion.svg
+        className="w-4 h-4 text-white/30"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        animate={{ y: [0, 6, 0] }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </motion.svg>
+    </motion.div>
+  );
+}
+
 // ─── Main Component ────────────────────────────────────────────────
 export default function HeroSequence() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -289,6 +316,9 @@ export default function HeroSequence() {
             style={{ transform: "scale(1.14)", transformOrigin: "center center" }}
           />
         </div>
+
+        {/* Scroll down hint — fades out as user scrolls */}
+        <ScrollHint scrollProgress={smoothProgress} />
 
         {/* ─── Beat A: Hero (3–18%) ─── */}
         <TextBeat scrollProgress={smoothProgress} start={0.03} end={0.18} align="right">
