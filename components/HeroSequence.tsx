@@ -281,12 +281,14 @@ export default function HeroSequence() {
       {!loaded && <LoadingScreen progress={loadProgress} />}
 
       <div ref={containerRef} className="relative" style={{ height: "600vh" }}>
-        {/* Sticky canvas */}
-        <canvas
-          ref={canvasRef}
-          className="sticky top-0 left-0 w-full h-screen z-[1]"
-          style={{ background: "#0A0A0A" }}
-        />
+        {/* Sticky canvas wrapper — overflow hidden + slight scale to crop watermark */}
+        <div className="sticky top-0 left-0 w-full h-screen z-[1] overflow-hidden" style={{ background: "#0A0A0A" }}>
+          <canvas
+            ref={canvasRef}
+            className="w-full h-full"
+            style={{ transform: "scale(1.14)", transformOrigin: "center center" }}
+          />
+        </div>
 
         {/* ─── Beat A: Hero (3–18%) ─── */}
         <TextBeat scrollProgress={smoothProgress} start={0.03} end={0.18} align="right">
