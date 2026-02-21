@@ -290,7 +290,9 @@ export default function HeroSequence() {
 
         {/* ─── Beat A: Hero (3–18%) ─── */}
         <TextBeat scrollProgress={smoothProgress} start={0.03} end={0.18} align="right">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white/90 leading-[0.9]">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white/90 leading-[0.9]"
+            style={{ fontSize: "clamp(5rem, 8vw, 9rem)" }}
+            >
             PARTH
             <br />
             KHATKE
@@ -306,7 +308,7 @@ export default function HeroSequence() {
         <TextBeat scrollProgress={smoothProgress} start={0.22} end={0.38} align="left">
           <h2
             className="font-display text-white/90 leading-[0.9] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(2.5rem, 5.5vw, 6rem)" }}
+            style={{ fontSize: "clamp(3.5rem, 6vw, 7rem)" }}
           >
             ROBUST
             <br />
@@ -344,7 +346,7 @@ export default function HeroSequence() {
         <TextBeat scrollProgress={smoothProgress} start={0.45} end={0.65} align="right">
           <h2
             className="font-display text-white/90 leading-[0.9] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(2.5rem, 5.5vw, 6rem)" }}
+            style={{ fontSize: "clamp(3.5rem, 6vw, 7rem)" }}
           >
             DYNAMIC
             <br />
@@ -385,11 +387,6 @@ export default function HeroSequence() {
             <br />
             BUILD
           </h2>
-          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/50 max-w-md tracking-wide font-light leading-relaxed">
-            Whether it&apos;s coffee, code, or cloud architecture—I&apos;m always
-            eager to tackle new challenges and continuously grow. Let&apos;s create
-            something impactful.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 pointer-events-auto">
             <a
               href="#contact"
