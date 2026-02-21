@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SKILLS } from "@/lib/constants";
 
@@ -31,7 +32,7 @@ export default function AboutSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 lg:gap-24"
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-10 lg:gap-12"
       >
         {/* Left Column */}
         <motion.div variants={itemVariants} className="relative">
@@ -39,9 +40,16 @@ export default function AboutSection() {
             About
           </span>
           <div className="w-16 h-[1px] bg-accent mt-4 mb-8" />
-          <span className="font-display text-white/[0.04] text-[8rem] sm:text-[12rem] leading-none block select-none">
-            02
-          </span>
+          <div className="relative w-full aspect-[3/4] max-w-[320px] rounded-lg overflow-hidden">
+            <Image
+              src="/View recent photos.jpeg"
+              alt="Parth Khatke"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 320px"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Right Column */}
