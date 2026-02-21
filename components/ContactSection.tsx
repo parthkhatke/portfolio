@@ -26,7 +26,6 @@ const itemVariants = {
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/parthkhatke" },
   { label: "LinkedIn", href: "https://linkedin.com/in/parthkhatke" },
-  { label: "Twitter/X", href: "https://x.com/parthkhatke" },
   { label: "Resume PDF", href: "#" },
 ];
 
@@ -111,19 +110,17 @@ export default function ContactSection() {
           variants={itemVariants}
           className="text-white/30 text-[0.85rem] font-sans mt-16"
         >
-          📍 Pune, India · Available for Remote
+          📍 Indore, India 
         </motion.p>
       </motion.div>
 
       {/* Footer */}
       <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.06] px-6 sm:px-10 lg:px-20 py-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto flex flex-row items-center justify-center">
           <span className="text-white/20 text-[0.75rem] font-sans">
             © 2025 Parth Khatke
           </span>
-          <span className="text-white/20 text-[0.75rem] font-sans">
-            Designed & developed with obsession.
-          </span>
+
         </div>
       </div>
     </section>

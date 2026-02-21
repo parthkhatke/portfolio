@@ -94,8 +94,7 @@ export const SKILLS = [
       "Spring Boot",
       "Hibernate",
       "REST APIs",
-      "PostgreSQL",
-      "Redis",
+      "Next.js",
     ],
   },
   {
@@ -113,7 +112,6 @@ export const SKILLS = [
     items: [
       "Docker",
       "Git",
-      "GitHub Actions",
       "Postman",
       "IntelliJ",
       "VS Code",
@@ -121,6 +119,6 @@ export const SKILLS = [
   },
   {
     category: "Databases",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    items: ["PostgreSQL", "MySQL"],
   },
 ] as const;
