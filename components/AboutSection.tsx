@@ -61,15 +61,13 @@ export default function AboutSection() {
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-6 mb-16">
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
-                Parth Khatke is a Full Stack Developer based in India with a
+                I am a Full Stack Developer based in Indore , India with a
                 passion for building products that are as robust under the hood
                 as they are beautiful on the surface.
               </p>
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
                 Currently working as an Associate Full Stack Developer at The
-                Modern Data Company, he architects backend systems with Java and
-                Spring Boot by day, and obsesses over React component trees and
-                animation curves by night.
+                Modern Data Company, I create Full Stack applications with Next JS.
               </p>
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
                 When he&apos;s not shipping features, he&apos;s exploring new

@@ -387,7 +387,7 @@ export default function HeroSequence() {
             <br />
             BACKENDS
           </h2>
-          <p className="text-white/50 font-sans font-light mt-6 max-w-[420px] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/70 font-sans font-light mt-6 max-w-[420px] text-sm sm:text-base leading-relaxed">
             Engineering scalable, production-grade architectures using Java,
             Spring Boot, Hibernate, and REST APIs.
           </p>
@@ -396,7 +396,7 @@ export default function HeroSequence() {
               {tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="border border-white/20 rounded-full px-3 py-1 text-xs font-mono text-white/50"
+                  className="border border-white/40 rounded-full px-3 py-1 text-xs font-mono text-white/50"
                 >
                   {tag}
                 </span>
@@ -406,7 +406,7 @@ export default function HeroSequence() {
               {tags.slice(4).map((tag) => (
                 <span
                   key={tag}
-                  className="border border-white/20 rounded-full px-3 py-1 text-xs font-mono text-white/50"
+                  className="border border-white/40 rounded-full px-3 py-1 text-xs font-mono text-white/50"
                 >
                   {tag}
                 </span>
@@ -425,7 +425,7 @@ export default function HeroSequence() {
             <br />
             FRONTENDS
           </h2>
-          <p className="text-white/50 font-sans font-light mt-6 max-w-[420px] text-sm sm:text-base leading-relaxed mx-auto md:mx-0 md:ml-auto">
+          <p className="text-white/70 font-sans font-light mt-6 max-w-[420px] text-sm sm:text-base leading-relaxed mx-auto md:mx-0 md:ml-auto">
             Crafting seamless, pixel-perfect user experiences with Next.js,
             React.js, TypeScript, and Tailwind CSS.
           </p>
@@ -434,7 +434,7 @@ export default function HeroSequence() {
               {frontendTags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="border border-white/20 rounded-full px-3 py-1 text-xs font-mono text-white/50"
+                  className="border border-white/40 rounded-full px-3 py-1 text-xs font-mono text-white/50"
                 >
                   {tag}
                 </span>
@@ -444,7 +444,7 @@ export default function HeroSequence() {
               {frontendTags.slice(3).map((tag) => (
                 <span
                   key={tag}
-                  className="border border-white/20 rounded-full px-3 py-1 text-xs font-mono text-white/50"
+                  className="border border-white/40 rounded-full px-3 py-1 text-xs font-mono text-white/50"
                 >
                   {tag}
                 </span>
@@ -463,7 +463,7 @@ export default function HeroSequence() {
           <div className="flex flex-col sm:flex-row gap-4 mt-8 pointer-events-auto">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-white/15 bg-white/[0.06] text-white/80 text-sm tracking-widest uppercase font-light hover:bg-white/10 hover:border-white/25 transition-all duration-500 backdrop-blur-xl"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-white/30 bg-white/[0.06] text-white/80 text-sm tracking-widest uppercase font-light hover:bg-white/10 hover:border-white/25 transition-all duration-500 backdrop-blur-xl"
             >
               Let&apos;s Connect
               <svg
@@ -482,7 +482,7 @@ export default function HeroSequence() {
             </a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-white/15 bg-white/[0.06] text-white/80 text-sm tracking-widest uppercase font-light hover:bg-white/10 hover:border-white/25 transition-all duration-500 backdrop-blur-xl"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-white/30 bg-white/[0.06] text-white/80 text-sm tracking-widest uppercase font-light hover:bg-white/10 hover:border-white/25 transition-all duration-500 backdrop-blur-xl"
             >
               About Me
               <svg
