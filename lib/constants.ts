@@ -1,6 +1,6 @@
 export const FRAME_COUNT = 192;
 export const FRAME_PATH = "/sequence/frame_";
-export const FRAME_EXT = ".png";
+export const FRAME_EXT = ".webp";
 
 export const COLORS = {
   bg: "#0A0A0A",

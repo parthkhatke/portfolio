@@ -18,7 +18,7 @@ import {
 // ─── Config ────────────────────────────────────────────────────────
 const FRAME_COUNT = 192; // frame_000.png → frame_191.png
 const FRAME_PATH = "/sequence/frame_";
-const FRAME_EXT = ".png";
+const FRAME_EXT = ".webp";
 
 function padIndex(i: number): string {
   return String(i).padStart(3, "0");
@@ -170,39 +170,63 @@ export default function HeroSequence() {
     mass: 0.2,
   });
 
-  // ── Preload all images ──
+  // ── Preload images: critical keyframes first, then fill the rest ──
   useEffect(() => {
     let cancelled = false;
-    const images: HTMLImageElement[] = [];
-    let loadedCount = 0;
 
-    for (let i = 0; i < FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = `${FRAME_PATH}${padIndex(i)}${FRAME_EXT}`;
-      img.onload = () => {
-        if (cancelled) return;
-        loadedCount++;
-        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
-        if (loadedCount === FRAME_COUNT) {
-          imagesRef.current = images;
-          setLoaded(true);
-        }
-      };
-      img.onerror = () => {
-        if (cancelled) return;
-        loadedCount++;
-        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
-        if (loadedCount === FRAME_COUNT) {
-          imagesRef.current = images;
-          setLoaded(true);
-        }
-      };
-      images.push(img);
+    // Pre-create empty slots so imagesRef always has correct indices
+    const images: (HTMLImageElement | null)[] = new Array(FRAME_COUNT).fill(null);
+    imagesRef.current = images as HTMLImageElement[];
+
+    let totalLoaded = 0;
+
+    function loadImage(index: number): Promise<void> {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = `${FRAME_PATH}${padIndex(index)}${FRAME_EXT}`;
+        img.onload = () => {
+          if (!cancelled) images[index] = img;
+          resolve();
+        };
+        img.onerror = () => resolve(); // skip broken frames gracefully
+      });
     }
 
-    return () => {
-      cancelled = true;
-    };
+    async function loadBatch(indices: number[]) {
+      // Load up to 8 concurrently
+      const CONCURRENCY = 8;
+      for (let i = 0; i < indices.length; i += CONCURRENCY) {
+        if (cancelled) return;
+        const batch = indices.slice(i, i + CONCURRENCY);
+        await Promise.all(batch.map(loadImage));
+        totalLoaded += batch.length;
+        if (!cancelled) setLoadProgress(Math.round((totalLoaded / FRAME_COUNT) * 100));
+      }
+    }
+
+    async function run() {
+      // Phase 1: Load ~24 evenly-spaced keyframes (every 8th frame + first & last)
+      const keyframes: number[] = [0];
+      for (let i = 0; i < FRAME_COUNT; i += 8) keyframes.push(i);
+      keyframes.push(FRAME_COUNT - 1);
+      const uniqueKeyframes = Array.from(new Set(keyframes)).sort((a, b) => a - b);
+
+      await loadBatch(uniqueKeyframes);
+      if (cancelled) return;
+
+      // Show the page after keyframes are loaded (~12% of frames)
+      setLoaded(true);
+
+      // Phase 2: Load all remaining frames in order
+      const remaining = [];
+      for (let i = 0; i < FRAME_COUNT; i++) {
+        if (!uniqueKeyframes.includes(i)) remaining.push(i);
+      }
+      await loadBatch(remaining);
+    }
+
+    run();
+    return () => { cancelled = true; };
   }, []);
 
   // ── Canvas draw with "cover" logic ──
@@ -212,8 +236,25 @@ export default function HeroSequence() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const img = imagesRef.current[frameIndex];
-    if (!img || !img.complete || img.naturalWidth === 0) return;
+    // Find closest available frame if the exact one isn't loaded yet
+    let img = imagesRef.current[frameIndex];
+    if (!img || !img.complete || img.naturalWidth === 0) {
+      // Search nearby frames (±1, ±2, ±4, ±8...)
+      for (let offset = 1; offset < FRAME_COUNT; offset++) {
+        const candidates = [frameIndex - offset, frameIndex + offset];
+        for (const ci of candidates) {
+          if (ci >= 0 && ci < FRAME_COUNT) {
+            const candidate = imagesRef.current[ci];
+            if (candidate && candidate.complete && candidate.naturalWidth > 0) {
+              img = candidate;
+              break;
+            }
+          }
+        }
+        if (img && img.complete && img.naturalWidth > 0) break;
+      }
+      if (!img || !img.complete || img.naturalWidth === 0) return;
+    }
 
     const cw = canvas.width;
     const ch = canvas.height;
