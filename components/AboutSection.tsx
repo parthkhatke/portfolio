@@ -61,19 +61,16 @@ export default function AboutSection() {
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-6 mb-16">
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
-                I am a Full Stack Developer based in Indore , India with a
-                passion for building products that are as robust under the hood
-                as they are beautiful on the surface.
-              </p>
+               I'm a Full Stack Developer based in Indore, India. I focus on building products 
+               that feel refined on the surface while remaining reliable and maintainable beneath it. </p> 
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
-                Currently working as an Associate Full Stack Developer at The
-                Modern Data Company, I create Full Stack applications with Next JS.
-              </p>
+               As an Associate Full Stack Developer at The Modern Data Company, I design and develop end-to-end web applications 
+               using Next.js and leveraging our own <a href="https://dataos.info" 
+                rel="noopener noreferrer" 
+                className="underline decoration-white/50 hover:decoration-accent  hover:text-accent  duration-500" >DataOS</a>  for clients.  </p> 
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
-                When he&apos;s not shipping features, he&apos;s exploring new
-                frameworks, reading engineering blogs, and figuring out how to
-                make the web feel more alive.
-              </p>
+               Outside of shipping features, I spend time cooking, sketching portraits and working on my side projects.
+                </p>
             </motion.div>
 
             {/* Currently At */}
@@ -81,7 +78,7 @@ export default function AboutSection() {
               <div className="inline-flex items-center gap-3 border border-white/10 rounded-full px-5 py-2.5">
                 <span className="w-2 h-2 rounded-full bg-green-500/70 animate-pulse" />
                 <span className="font-mono text-white/50 text-xs tracking-wide">
-                  Currently @ The Modern Data Company
+                  Currently @<a href="https://themoderndata.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-accent transition-colors duration-500"> The Modern Data Company </a>
                 </span>
               </div>
             </motion.div>

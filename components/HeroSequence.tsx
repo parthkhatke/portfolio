@@ -370,7 +370,7 @@ export default function HeroSequence() {
             <br />
             KHATKE
           </h1>
-          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/50 max-w-md tracking-wide font-light leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/70 max-w-md tracking-wide font-light leading-relaxed">
             Full Stack Developer.
             <br />
             Driven by curiosity, built for scale.
