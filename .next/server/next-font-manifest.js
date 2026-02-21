@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/parthkhtke/porfolio-web-4/app/layout\":[\"static/media/6c25f6e897d845a3-s.p.woff2\",\"static/media/13971731025ec697-s.p.woff2\",\"static/media/fa3e259cafa8f47e-s.p.woff2\",\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/558ca1a6aa3cb55e-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
