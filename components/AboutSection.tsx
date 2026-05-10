@@ -64,10 +64,8 @@ export default function AboutSection() {
                I'm a Full Stack Developer based in Indore, India. I focus on building products 
                that feel refined on the surface while remaining reliable and maintainable beneath it. </p> 
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
-               As an Associate Full Stack Developer at The Modern Data Company, I design and develop end-to-end web applications 
-               using Next.js and leveraging our own <a href="https://dataos.info" 
-                rel="noopener noreferrer" 
-                className="underline decoration-white/50 hover:decoration-accent  hover:text-accent  duration-500" >DataOS</a>  for clients.  </p> 
+               As a Full Stack Developer at The Modern Data Company
+               , I build and maintain end-to-end web applications, working across modern frontend interfaces, scalable backend systems, APIs, and data-driven workflows to create seamless digital experiences.  </p> 
               <p className="text-white/60 font-sans font-light text-base sm:text-lg leading-relaxed">
                Outside of shipping features, I spend time cooking, sketching portraits and working on my side projects.
                 </p>

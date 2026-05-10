@@ -327,12 +327,11 @@ export default function HeroSequence() {
     return () => cancelAnimationFrame(rafRef.current);
   }, []);
   const tags = [
+    "Next.js",
     "Java",
-    "Spring Boot",
     "SQL",
     "Git",
     "REST APIs",
-    "PostgreSQL",
     "Docker",
   ];
 
