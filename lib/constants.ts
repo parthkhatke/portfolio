@@ -90,11 +90,10 @@ export const SKILLS = [
   {
     category: "Backend",
     items: [
+      "Next.js",
+      "REST APIs",
       "Java",
       "Spring Boot",
-      "Hibernate",
-      "REST APIs",
-      "Next.js",
     ],
   },
   {
@@ -104,7 +103,6 @@ export const SKILLS = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Framer Motion",
     ],
   },
   {
@@ -112,9 +110,7 @@ export const SKILLS = [
     items: [
       "Docker",
       "Git",
-      "Postman",
-      "IntelliJ",
-      "VS Code",
+      "AWS",
     ],
   },
   {
