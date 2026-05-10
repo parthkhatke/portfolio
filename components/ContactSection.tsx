@@ -26,7 +26,7 @@ const itemVariants = {
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/parthkhatke" },
   { label: "LinkedIn", href: "https://linkedin.com/in/parthkhatke" },
-  { label: "Resume PDF", href: "#" },
+  { label: "Resume PDF", href: "https://drive.google.com/file/d/1pv6_-LTB8MVAFSK-aRGj-PbhnaF5LSLN/view?usp=sharing" },   
 ];
 
 export default function ContactSection() {
