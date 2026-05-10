@@ -108,7 +108,7 @@ export default function ContactSection() {
         {/* Location Badge */}
         <motion.p
           variants={itemVariants}
-          className="text-white/30 text-[0.85rem] font-sans mt-16"
+          className="text-white/30 text-[0.85rem] font-sans mt-16 mb-5"
         >
           📍 Indore, India 
         </motion.p>
@@ -118,7 +118,7 @@ export default function ContactSection() {
       <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.06] px-6 sm:px-10 lg:px-20 py-6">
         <div className="max-w-7xl mx-auto flex flex-row items-center justify-center">
           <span className="text-white/20 text-[0.75rem] font-sans">
-            © 2025 Parth Khatke
+            © 2026 Parth Khatke
           </span>
 
         </div>
